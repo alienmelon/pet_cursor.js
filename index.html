@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>An animated pet cursor using cursor:url()...</title>
+<script src="pet_cursor.js"></script>	
+</head>
+<body onload="startPetCursor();">
+	
+	<h2>Pet cursor is a simple javascript file that turns your website's cursor into a cute animated pet! (for the desktop)</h2>
+	<b>Download it on github here!</b>
+	<br><br>
+	Now your desktop visitors can play as a cute creature as they browse your site!
+	<br>
+	This page is a tiny demo. Try rolling over the elements bellow the install instructions to see how it works...<br><br>
+	The default character is based on <a href="https://en.wikipedia.org/wiki/Neko_(software)" target="_blank">the Neko desktop pet</a>, you can use this default, or easily change the character to your own. Customization is simple, just follow the instructions in the pet_cursor.js file and update a few arrays.
+	<br><br>
+	Features include...
+	<li>* Cursor faces the direction of the mouse.</li>
+	<li>* Cursor has a small interaction state, to interact with specific elements on a site (like hyperlinks).</li>
+	<li>Cursor has a cute idle state, and a small "surprise" state that reacts when idling and the mouse is clicked.</li>
+	<li>* It's easy to customize.</li>
+	<br><br>
+	<h3>Getting Pet Cursor on your page is easy! Just do the following...</h3>
+	Download it from github here.<br>
+	Place "pet_cursor.js" and the "pet_cursor" folder in the same directory as the page that you would like to run it on.<br>
+	Then include the javascript by copying the code bellow and pasting it in your website's "head" tag...<br><br>
+	<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;script </span><span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;pet_cursor.js&quot;</span><span style="color: #007700">&gt;&lt;/script&gt;</span>	
+	</pre></div>
+	<br><br>
+	Then change your page's "body" tag to call startPetCursor(); on load...
+	<br><br>
+	<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;body</span> <span style="color: #0000CC">onload=</span><span style="background-color: #fff0f0">&quot;startPetCursor();&quot;</span><span style="color: #007700">&gt;</span>
+	</pre></div>
+	<br><br>
+	That's it! Your page should now have a cute little playable cursor character...
+	<br><br><br><br>
+	<div style="width: 500px; background-color:LightGray; padding: 50px;">
+	<h3>Try rolling over the elements bellow to play around...</h3><br><br>
+	<input value="This is an input text field!" style="width:300px;">
+	<br><br><br>
+	<button>THIS IS A BUTTON</button>
+	<br><br>
+	<a href="http://google.com">THIS IS A HYPERLINK</a>
+	<br><br>
+	<input type="text">
+	<br><br><br><br>
+	</div>
+</body>
+</html>
