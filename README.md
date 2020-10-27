@@ -4,7 +4,8 @@ Pet cursor (Neko cursor) is a simple javascript file that turns your website's c
 ![Demo gif](http://tetrageddon.com/petcursor/demo3.gif)
 
 Now your desktop visitors can play as a cute creature as they browse your site!
-[Click here for a demo.](http://tetrageddon.com/petcursor/)
+
+### [Click here for a demo.](http://tetrageddon.com/petcursor/)
 
 The default character is based on [the Neko desktop pet](https://en.wikipedia.org/wiki/Neko_(software)), you can use this default, or easily change the character to your own. Customization is simple, just follow the instructions in the **pet_cursor.js** file and update a few arrays.
 
