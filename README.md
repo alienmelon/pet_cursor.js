@@ -12,6 +12,7 @@ The default character is based on [the Neko desktop pet](https://en.wikipedia.or
 ## Features include...
 * Cursor faces the direction of the mouse.
 * Cursor has a small interaction state, to interact with specific elements on a site (like hyperlinks).
+* Cursor has a cute idle state, and a small "surprise" state that reacts when idling and the mouse is clicked.
 * It's easy to customize.
 
 ## Getting Pet Cursor on your page is easy! Just do the following...
