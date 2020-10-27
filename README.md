@@ -1,7 +1,7 @@
 # pet_cursor.js
 Pet cursor (Neko cursor) is a simple javascript file that turns your website's cursor into a cute animated pet! (for the desktop)
 
-![Demo gif](http://tetrageddon.com/petcursor/demo2.gif)
+![Demo gif](http://tetrageddon.com/petcursor/demo1.gif)
 
 Now your desktop visitors can play as a cute creature as they browse your site!
 [Click here for a demo.](http://tetrageddon.com/petcursor/)
