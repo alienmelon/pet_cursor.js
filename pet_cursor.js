@@ -59,11 +59,14 @@ var str_petCursor_directory = "pet_cursor/";//directory path to images
 var str_petCursor_direction = "DOWN";
 var num_petCursor_prevX = 0;
 var num_petCursor_prevY = 0;
+var num_petCursor_distance = 0;
 //state countdown (change animation state when idle)
 var num_petCursor_stateCnt = 0; //0 = moving
 //animation
 var int_petCursorAnimation;//interval id
 //array handling
+var num_petCursor_frameAcc = 0; // Use Bresenham-like error accumulator for 
+var num_petCursor_frameDivisor = 2;
 var num_petCursor_currFrame = 0;//current frame of the animation (control "playhead")
 var arr_petCursorCurrentState = arr_petCursor_idle;//current movement array (sets current direction animation)
 var arr_petCursorInteract = arr_petCursor_scratch_down;//current interaction array (sets current interact with an element on the page animation)
@@ -103,6 +106,10 @@ function petCursor_getDirection(numX, numY){
 		arr_petCursorCurrentState = arr_petCursor_up;
 		arr_petCursorInteract = arr_petCursor_scratch_up;
 	}
+	// calculate distance moved
+	var dx = numX - num_petCursor_prevX;
+	var dy = numY - num_petCursor_prevY;
+	num_petCursor_distance = Math.sqrt(dx * dx + dy * dy);
 	//set previous values
 	num_petCursor_prevX = numX;
 	num_petCursor_prevY = numY;
@@ -168,8 +175,20 @@ function petCursor_animateCursor(){
 	document.body.style.cursor = 'url(' + str_petCursor_directory + arr_petCursorCurrentState[num_petCursor_currFrame] + '), auto';
 	
 	//control "playhead", step through current array
+	// default to one frame per loop
+	var inc = 1;
+
+	// when moving, base animation speed on mouse speed instead
+	num_petCursor_frameAcc += num_petCursor_distance;
+	if (num_petCursor_stateCnt >= 0 && num_petCursor_stateCnt < 5) {
+		if (num_petCursor_frameAcc > num_petCursor_frameDivisor) {
+			num_petCursor_frameAcc = 0;
+		} else {
+			inc = 0;
+		}	
+	}
 	//increment
-	num_petCursor_currFrame += 1;
+	num_petCursor_currFrame += inc;
 	//reached end of movement array, loop
 	if(num_petCursor_currFrame > arr_petCursorCurrentState.length-1){
 		num_petCursor_currFrame = 0;
